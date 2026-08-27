@@ -1,5 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-background: #191b1a;
+  --color-accent: #5fad78;
+  --color-primary-text: #fafafa;
+  --color-secondary-text: #cccccc;
+  --font-accent: "Space Grotesk", sans-serif;
+  --font-copperplate: "Copperplate Gothic", serif;
+  --color-background-card: #F5F1E8;
+}
+
+@font-face {
+  font-family: "Copperplate Gothic";
+  src: url("/fonts/CopperplateGothic-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Copperplate Gothic";
+  src: url("/fonts/CopperplateGothic-Heavy.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
 :root {
-  font: 18px/145% system-ui, 'Segoe UI', Roboto, sans-serif;
+  font-family: var(--font-sans);
+  text-underline-offset: 2px;
+  background-color: var(--color-background);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
