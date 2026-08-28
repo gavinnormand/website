@@ -3,19 +3,19 @@ import type { SongType } from "../../types/SongType";
 import Dropdown from "./Dropdown";
 import SongList from "./SongList";
 
-const fetchSongs = async (method: string, period: string) => {
+const fetchSongs = async (method: string, range: string) => {
   try {
-    const params = new URLSearchParams({ period });
+    const params = new URLSearchParams({ range });
     const res =
       method == "recent"
-        ? await fetch(`/api/fetchRecentSongs`)
-        : await fetch(`/api/fetchTopSongs?${params}`);
+        ? await fetch(`/api/spotify/fetchRecentSongs`)
+        : await fetch(`/api/spotify/fetchTopSongs?${params}`);
     if (!res.ok) throw new Error("Failed to fetch tracks");
     const data = await res.json();
     return data;
   } catch (error) {
-    console.error("Error fetching recent songs:", error);
-    throw new Error("Failed to fetch recent songs", { cause: error });
+    console.error("Error fetching songs:", error);
+    throw new Error("Failed to fetch songs", { cause: error });
   }
 };
 
@@ -24,25 +24,22 @@ function Music() {
     recent: "recent",
     top: "top",
   };
-  const periodOptions = {
-    "7day": "1 week",
-    "1month": "1 month",
-    "3month": "3 month",
-    "6month": "6 month",
-    "12month": "1 year",
-    overall: "all-time",
+  const rangeOptions = {
+    short_term: "1 month",
+    medium_term: "6 months",
+    long_term: "1 year",
   };
   const [songs, setSongs] = useState<SongType[]>([]);
   const [loading, setLoading] = useState(true);
   const [method, setMethod] = useState<string>("recent");
-  const [period, setPeriod] = useState<string>("7day");
+  const [range, setRange] = useState<string>("short_term");
 
   useEffect(() => {
-    fetchSongs(method, period)
+    fetchSongs(method, range)
       .then((data: SetStateAction<SongType[]>) => setSongs(data))
       .catch(console.error)
       .finally(() => setLoading(false));
-  }, [method, period]);
+  }, [method, range]);
 
   return (
     <div className="text-secondary-text flex flex-col gap-2 text-sm">
@@ -51,9 +48,9 @@ function Music() {
         <div className="flex flex-row gap-2">
           {method != "recent" && (
             <Dropdown
-              selectedOption={period}
-              options={periodOptions}
-              onSelect={setPeriod}
+              selectedOption={range}
+              options={rangeOptions}
+              onSelect={setRange}
             />
           )}
           <Dropdown

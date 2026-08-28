@@ -1,33 +1,44 @@
+import getAccessToken from "./getAccessToken.js";
+
 export default async function handler(req, res) {
   try {
-    const username = process.env.LASTFM_USERNAME;
-    const apiKey = process.env.LASTFM_API_KEY;
+    const accessToken = await getAccessToken();
 
-    if (!username || !apiKey) {
-      return res.status(500).json({ error: "Missing Last.fm credentials" });
-    }
+    const url = new URL("https://api.spotify.com/v1/me/player/recently-played");
 
-    const url = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${username}&api_key=${apiKey}&format=json&limit=5`;
+    url.searchParams.set("limit", "5");
 
-    const response = await fetch(url);
+    const response = await fetch(url, {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
 
     if (!response.ok) {
-      throw new Error("Failed to fetch tracks");
+      const error = await response.text();
+
+      console.error("Spotify API error:", response.status, error);
+
+      throw new Error("Failed to fetch Spotify tracks");
     }
 
     const data = await response.json();
 
-    const songs = data.recenttracks.track.map((track) => ({
-      title: track.name,
-      artist: track.artist["#text"],
-      album: track.album["#text"],
-      albumCoverURL: track.image?.[3]?.["#text"] || "",
-      linkURL: track.url,
-    }));
+    const songs = data.items.map((item) => {
+      const track = item.track;
+
+      return {
+        title: track.name,
+        artist: track.artists.map((artist) => artist.name).join(", "),
+        album: track.album.name,
+        albumCoverURL: track.album.images[0]?.url || "",
+        linkURL: track.external_urls.spotify,
+      };
+    });
 
     res.status(200).json(songs);
   } catch (error) {
-    console.error("Error fetching recent tracks:", error);
+    console.error("Error fetching recent songs:", error);
     res.status(500).json({ error: "Failed to fetch recent songs" });
   }
 }

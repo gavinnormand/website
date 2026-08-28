@@ -6,10 +6,8 @@ export default function handler(req, res) {
     client_id: CLIENT_ID,
     response_type: "code",
     redirect_uri: REDIRECT_URI,
-    scope: "user-top-read",
+    scope: "user-top-read user-read-recently-played",
   });
 
-  res.redirect(
-    `https://accounts.spotify.com/authorize?${params.toString()}`
-  );
+  res.redirect(`https://accounts.spotify.com/authorize?${params.toString()}`);
 }

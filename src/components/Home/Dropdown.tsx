@@ -14,23 +14,25 @@ function Dropdown({
   return (
     <div className="relative flex flex-col">
       <div
-        className="flex flex-row items-center"
+        className="flex cursor-pointer flex-row items-center"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <p className="cursor-pointer">{options[selectedOption]}</p>
+        <p>{options[selectedOption]}</p>
         <GoChevronRight
           className={`transition-transform ${isOpen ? "rotate-90" : ""}`}
         />
       </div>
       {isOpen && (
-        <div className="absolute top-full z-10">
+        <div className="bg-background absolute top-full z-10">
           {Object.keys(options).map((method) => {
             return (
               <p
-                className="cursor-pointer"
+                className={`cursor-pointer ${method == selectedOption ? "text-accent" : "hover:text-accent/80"}`}
                 onClick={() => {
-                  setIsOpen(false);
-                  onSelect(method);
+                  if (method != selectedOption) {
+                    setIsOpen(false);
+                    onSelect(method);
+                  }
                 }}
               >
                 {options[method]}
