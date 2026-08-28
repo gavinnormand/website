@@ -2,6 +2,7 @@ import { useState } from "react";
 import { IoLogoGithub, IoLogoInstagram, IoLogoLinkedin } from "react-icons/io";
 import { MdOutlineEmail } from "react-icons/md";
 import SectionTitle from "../components/SectionTitle";
+import PageLink from "../components/PageLink";
 
 function Home() {
   const [pictureIndex] = useState<number>(() => {
@@ -58,7 +59,7 @@ function Home() {
             the screen.
           </p>
           {/* Info lander socials */}
-          <div className="text-secondary-text flex flex-row justify-center gap-4 md:justify-start">
+          <div className="text-secondary-text flex flex-row items-center justify-center gap-4 md:justify-start">
             <a
               target="_blank"
               href="mailto:normandgavin@gmail.com"
@@ -87,6 +88,9 @@ function Home() {
             >
               <IoLogoInstagram size={28} />
             </a>
+            <p>|</p>
+            <PageLink page={"experience"} link={"/experience"} size={24} />
+            <PageLink page={"projects"} link={"/projects"} size={24} />
           </div>
         </div>
 
@@ -142,6 +146,12 @@ function Home() {
           Ultimately, I'm someone who likes to stay curious, build things, and
           take on challenges that push me outside of what I already know.
         </p>
+      </div>
+
+      {/* Music */}
+      <div>
+        <SectionTitle title={"music"} />
+        {/* <Music /> */}
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 function SectionTitle({ title }: { title: string }) {
   return (
     <div className="flex flex-row items-center gap-2">
-      <p className="text-accent/40 text-sm">{title}</p>
+      <p className="text-accent/40 font-mono text-sm">{title}</p>
       <div className="bg-accent/35 h-px w-fit flex-1" />
     </div>
   );

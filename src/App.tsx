@@ -4,12 +4,13 @@ import Nav from "./components/Nav";
 import Experience from "./pages/Experience";
 import Projects from "./pages/Projects";
 import Card from "./pages/Card";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <BrowserRouter>
       <Nav />
-      <div className="mx-auto max-w-3xl px-8 py-16 md:px-16">
+      <div className="mx-auto max-w-3xl px-8 py-16">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/experience" element={<Experience />} />
@@ -17,6 +18,7 @@ function App() {
           <Route path="/card" element={<Card />} />
         </Routes>
       </div>
+      <Footer />
     </BrowserRouter>
   );
 }

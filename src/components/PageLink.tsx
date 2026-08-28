@@ -1,9 +1,23 @@
-function PageLink({ title }: { title: string }) {
+import { Link } from "react-router-dom";
+
+function PageLink({
+  page,
+  link,
+  size,
+}: {
+  page: string;
+  link: string;
+  size: number;
+}) {
   return (
-    <div className="flex flex-row items-center gap-2">
-      <p className="text-accent/40 text-sm">{title}</p>
-      <div className="bg-accent/40 h-px w-fit flex-1" />
-    </div>
+    <Link
+      className={`border-secondary-text hover:border-primary-text h-[${size}px] flex items-center rounded-md border`}
+      to={link}
+    >
+      <p className="text-secondary-text hover:text-primary-text px-2 text-sm font-semibold">
+        {page}
+      </p>
+    </Link>
   );
 }
 
