@@ -1,7 +1,7 @@
 import type { ExperienceType } from "../../types/ExperienceType";
 import ExperienceCard from "./ExperienceCard";
 
-function ExperienceList({ experiences }: { experiences: ExperienceType[] }) {
+function ExperienceCardList({ experiences }: { experiences: ExperienceType[] }) {
   return (
     <div className="flex flex-col gap-3">
       {experiences.map((experience, index, array) => (
@@ -16,4 +16,4 @@ function ExperienceList({ experiences }: { experiences: ExperienceType[] }) {
   );
 }
 
-export default ExperienceList;
+export default ExperienceCardList;
