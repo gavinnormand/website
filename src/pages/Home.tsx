@@ -51,38 +51,42 @@ function Home() {
             and looking for interesting problems to explore.
           </p>
           {/* Info lander socials */}
-          <div className="text-secondary-text flex flex-row items-center justify-center gap-4 md:justify-start">
-            <a
-              target="_blank"
-              href="mailto:normandgavin@gmail.com"
-              className="hover:text-primary-text transition-colors"
-            >
-              <MdOutlineEmail size={28} />
-            </a>
-            <a
-              target="_blank"
-              href="https://github.com/gavinnormand"
-              className="hover:text-primary-text transition-colors"
-            >
-              <IoLogoGithub size={28} />
-            </a>
-            <a
-              target="_blank"
-              href="https://linkedin.com/in/gavin-normand"
-              className="hover:text-primary-text transition-colors"
-            >
-              <IoLogoLinkedin size={28} />
-            </a>
-            <a
-              target="_blank"
-              href="https://instagram.com/gavin_normand"
-              className="hover:text-primary-text transition-colors"
-            >
-              <IoLogoInstagram size={28} />
-            </a>
-            <p>|</p>
-            <PageLink page={"experience"} link={"/experience"} size={24} />
-            <PageLink page={"projects"} link={"/projects"} size={24} />
+          <div className="text-secondary-text flex flex-col items-center justify-center gap-4 md:flex-row md:justify-start">
+            <div className="flex flex-row gap-4">
+              <a
+                target="_blank"
+                href="mailto:normandgavin@gmail.com"
+                className="hover:text-primary-text transition-colors"
+              >
+                <MdOutlineEmail size={28} />
+              </a>
+              <a
+                target="_blank"
+                href="https://github.com/gavinnormand"
+                className="hover:text-primary-text transition-colors"
+              >
+                <IoLogoGithub size={28} />
+              </a>
+              <a
+                target="_blank"
+                href="https://linkedin.com/in/gavin-normand"
+                className="hover:text-primary-text transition-colors"
+              >
+                <IoLogoLinkedin size={28} />
+              </a>
+              <a
+                target="_blank"
+                href="https://instagram.com/gavin_normand"
+                className="hover:text-primary-text transition-colors"
+              >
+                <IoLogoInstagram size={28} />
+              </a>
+            </div>
+            <p className="hidden md:block">|</p>
+            <div className="flex flex-row gap-4">
+              <PageLink page={"experience"} link={"/experience"} size={24} />
+              <PageLink page={"projects"} link={"/projects"} size={24} />
+            </div>
           </div>
         </div>
 
@@ -125,8 +129,7 @@ function Home() {
           <br />I grew up in Millstone, New Jersey, and now spend most of the
           year in Boston. Outside of tech, I'm usually outdoors or spending time
           with friends, family, and my dog. I enjoy pickup basketball, hiking,
-          biking, running, skiing, tennis, music, and watching the
-          NBA and NFL.
+          biking, running, skiing, tennis, music, and watching the NBA and NFL.
         </p>
       </div>
 

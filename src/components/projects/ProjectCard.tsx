@@ -7,6 +7,7 @@ function ProjectCard({ project }: { project: ProjectType }) {
   const isImage = !project.imageURL.endsWith(".mp4");
   return (
     <div className="bg-secondary-text/5 text-secondary-text flex w-full flex-col overflow-hidden rounded-xl md:flex-row">
+      {/* Project media */}
       <div className="aspect-video w-full shrink-0 overflow-hidden md:w-72">
         <img
           className={`${isImage ? "block" : "hidden"} h-full w-full object-cover`}
@@ -22,15 +23,18 @@ function ProjectCard({ project }: { project: ProjectType }) {
           controls={false}
         />
       </div>
+
+      {/* Project info */}
       <div className="flex flex-1 flex-col justify-between gap-2 p-4 text-center md:text-left">
+        {/* Project title and description */}
         <div className="flex flex-col">
           <p className="text-primary-text text-lg font-semibold">
             {project.title}
           </p>
-
           <p className="text-sm">{project.description}</p>
         </div>
 
+        {/* Tech stack */}
         <div className="flex flex-row flex-wrap gap-1">
           {project.stack.map((tech) => (
             <p
@@ -42,6 +46,7 @@ function ProjectCard({ project }: { project: ProjectType }) {
           ))}
         </div>
 
+        {/* Project links */}
         <div className="mt-2 flex flex-row justify-between text-sm font-medium">
           <a
             href={project.githubURL}
