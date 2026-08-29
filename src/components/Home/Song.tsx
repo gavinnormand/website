@@ -1,28 +1,23 @@
 import type { SongType } from "../../types/SongType";
 
 function dateTimeToTimeSince(dateTime: string) {
-  const date = new Date(dateTime).getTime();
+  const date = new Date(dateTime);
   const now = Date.now();
 
-  const secondsAgo = Math.floor((now - date) / 1000);
+  const secondsAgo = Math.floor((now - date.getTime()) / 1000);
 
-  const intervals: { [key: string]: number } = {
-    year: 31536000,
-    month: 2592000,
-    week: 604800,
-    day: 86400,
-    hour: 3600,
-    minute: 60,
-  };
-
-  for (const [unit, secondsInUnit] of Object.entries(intervals)) {
-    const count = Math.floor(secondsAgo / secondsInUnit);
-    if (count >= 1) {
-      return `${count} ${unit}${count > 1 ? "s" : ""} ago`;
-    }
+  if (secondsAgo < 60) {
+    return `${secondsAgo}s ago`;
+  } else if (secondsAgo < 3600) {
+    return `${Math.floor(secondsAgo / 60)}m ago`;
+  } else if (secondsAgo < 86400) {
+    return `${Math.floor(secondsAgo / 3600)}h ago`;
+  } else {
+    return date.toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+    });
   }
-
-  return `${secondsAgo} seconds ago`;
 }
 
 function Song({ song }: { song: SongType }) {

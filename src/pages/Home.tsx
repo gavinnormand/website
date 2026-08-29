@@ -11,7 +11,7 @@ function Home() {
   });
   const [pictureHovered, setPictureHovered] = useState<boolean>(false);
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-8 pt-8">
       {/* Info lander */}
       <div className="mx-auto flex flex-row justify-center gap-6">
         {/* Info lander text */}
@@ -136,16 +136,11 @@ function Home() {
           and I'm always looking for opportunities to learn something new or
           work on a problem I haven't encountered before.
           <br />
-          <br />
-          I grew up in Millstone, New Jersey, and now spend most of the year in
-          Boston. Outside of tech, I'm usually doing something outdoors or
-          spending time with people I care about. I enjoy pickup basketball,
+          <br />I grew up in Millstone, New Jersey, and now spend most of the
+          year in Boston. Outside of tech, I'm usually doing something outdoors
+          or spending time with people I care about. I enjoy pickup basketball,
           hiking, biking, running, skiing, tennis, photography, and cooking. I'm
           also always of spending time with friends, family, and my dog.
-          <br />
-          <br />
-          Ultimately, I'm someone who likes to stay curious, build things, and
-          take on challenges that push me outside of what I already know.
         </p>
       </div>
 
