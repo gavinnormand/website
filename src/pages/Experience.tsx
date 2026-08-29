@@ -1,4 +1,4 @@
-import ExperienceList from "../components/Experience/ExperienceCardList";
+import ExperienceList from "../components/experience/ExperienceCardList";
 import SectionTitle from "../components/SectionTitle";
 import type { ExperienceType } from "../types/ExperienceType";
 

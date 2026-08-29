@@ -3,7 +3,7 @@ import { IoLogoGithub, IoLogoInstagram, IoLogoLinkedin } from "react-icons/io";
 import { MdOutlineEmail } from "react-icons/md";
 import SectionTitle from "../components/SectionTitle";
 import PageLink from "../components/PageLink";
-import Music from "../components/Home/Music";
+import Music from "../components/home/Music";
 
 function Home() {
   const [pictureIndex] = useState<number>(() => {
