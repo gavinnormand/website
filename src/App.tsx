@@ -5,6 +5,7 @@ import Experience from "./pages/Experience";
 import Projects from "./pages/Projects";
 import Card from "./pages/Card";
 import Footer from "./components/Footer";
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         </Routes>
       </div>
       <Footer />
+      <Analytics />
     </BrowserRouter>
   );
 }
