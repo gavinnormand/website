@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { GoChevronRight } from "react-icons/go";
+import { FaCaretRight } from "react-icons/fa";
 
 function Dropdown({
   selectedOption,
@@ -14,16 +14,16 @@ function Dropdown({
   return (
     <div className="relative flex flex-col">
       <div
-        className="flex cursor-pointer flex-row items-center"
+        className={`border-secondary-text flex cursor-pointer flex-row items-center gap-2 border px-1 ${isOpen ? "rounded-t-md border-b-transparent" : "rounded-md"}`}
         onClick={() => setIsOpen(!isOpen)}
       >
         <p>{options[selectedOption]}</p>
-        <GoChevronRight
+        <FaCaretRight
           className={`transition-transform ${isOpen ? "rotate-90" : ""}`}
         />
       </div>
       {isOpen && (
-        <div className="bg-background absolute top-full z-10">
+        <div className="bg-background border-secondary-text absolute top-full z-10 -mt-px w-full rounded-b-md border border-t-0 px-1 pb-px">
           {Object.keys(options).map((method) => {
             return (
               <p

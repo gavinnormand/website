@@ -28,11 +28,13 @@ export default async function handler(req, res) {
     const data = await response.json();
 
     const songs = data.items.map((track) => ({
+      type: "recent",
       title: track.name,
       artist: track.artists.map((artist) => artist.name).join(", "),
       album: track.album.name,
       albumCoverURL: track.album.images[0]?.url || "",
       linkURL: track.external_urls.spotify,
+      popularity: track.popularity,
     }));
 
     res.status(200).json(songs);

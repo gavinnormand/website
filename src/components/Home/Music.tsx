@@ -2,6 +2,7 @@ import { useEffect, useState, type SetStateAction } from "react";
 import type { SongType } from "../../types/SongType";
 import Dropdown from "./Dropdown";
 import SongList from "./SongList";
+import { SpinnerCircularFixed } from "spinners-react";
 
 const fetchSongs = async (method: string, range: string) => {
   try {
@@ -42,26 +43,42 @@ function Music() {
   }, [method, range]);
 
   return (
-    <div className="text-secondary-text flex flex-col gap-2 text-sm">
-      <div className="flex flex-row justify-between">
+    <div className="text-secondary-text flex flex-col gap-3 text-sm">
+      <div className="flex flex-row justify-between font-mono">
         <p>{method == "recent" ? "recent" : "top"} songs</p>
         <div className="flex flex-row gap-2">
           {method != "recent" && (
             <Dropdown
               selectedOption={range}
               options={rangeOptions}
-              onSelect={setRange}
+              onSelect={(string) => {
+                setLoading(true);
+                setRange(string);
+              }}
             />
           )}
           <Dropdown
             selectedOption={method}
             options={methodOptions}
-            onSelect={setMethod}
+            onSelect={(string) => {
+              setLoading(true);
+              setMethod(string);
+            }}
           />
         </div>
       </div>
-      <SongList songs={songs} />
-      <p>{loading}</p>
+      {loading ? (
+        <SpinnerCircularFixed
+          size={50}
+          thickness={100}
+          speed={100}
+          color="#5fad78"
+          secondaryColor="rgba(0, 0, 0, 0.44)"
+          className="mx-auto py-8"
+        />
+      ) : (
+        <SongList songs={songs} />
+      )}
     </div>
   );
 }

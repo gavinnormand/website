@@ -10,6 +10,7 @@
         "react-dom": "^19.2.8",
         "react-icons": "^5.7.0",
         "react-router-dom": "^7.18.2",
+        "spinners-react": "^1.0.11",
         "tailwindcss": "^4.3.3",
       },
       "devDependencies": {
@@ -416,6 +417,8 @@
     "shebang-regex": ["shebang-regex@3.0.0", "", {}, "sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A=="],
 
     "source-map-js": ["source-map-js@1.2.1", "", {}, "sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA=="],
+
+    "spinners-react": ["spinners-react@1.0.11", "", { "peerDependencies": { "@types/react": "^16.x || ^17.x || ^18.x || ^19.x", "@types/react-dom": "^16.x || ^17.x || ^18.x || ^19.x", "react": "^16.x || ^17.x || ^18.x || ^19.x", "react-dom": "^16.x || ^17.x || ^18.x || ^19.x" } }, "sha512-CpQZixAI3dW+nLuJSrOTz4bDroSwLoIO5ljFt8wc1qy39yhK6MUubKnPD3z9/xIwNWFqy3mMRlW1mik/Fgqjow=="],
 
     "tailwindcss": ["tailwindcss@4.3.3", "", {}, "sha512-gOhV3P7ufE62QDGg1zVaTgCR+EtPv92k2nIhVcVKcLmxT1sUBsQGhnZj175j+MqRt4zLF7ic+sCYjfhxMxj7YQ=="],
 

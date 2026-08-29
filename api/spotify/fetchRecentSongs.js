@@ -28,11 +28,13 @@ export default async function handler(req, res) {
       const track = item.track;
 
       return {
+        type: "recent",
         title: track.name,
         artist: track.artists.map((artist) => artist.name).join(", "),
         album: track.album.name,
         albumCoverURL: track.album.images[0]?.url || "",
         linkURL: track.external_urls.spotify,
+        played_at: item.played_at,
       };
     });
 
