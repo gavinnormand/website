@@ -49,7 +49,7 @@ const experiences: ExperienceType[] = [
     description: "Building community and supporting 30+ residents",
     logo: {
       src: "/experience/northeastern.png",
-      link: "https://www.khoury.northeastern.edu/",
+      link: "https://www.housing.northeastern.edu/",
     },
   },
   {
@@ -125,9 +125,13 @@ function Experience() {
   return (
     <div className="flex flex-col gap-4">
       <SectionTitle title="experience" />
-      <ExperienceList experiences={experiences} />
+      <div className="px-2">
+        <ExperienceList experiences={experiences} />
+      </div>
       <SectionTitle title="leadership" />
-      <ExperienceList experiences={leadership} />
+      <div className="px-2">
+        <ExperienceList experiences={leadership} />
+      </div>
     </div>
   );
 }

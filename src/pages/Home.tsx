@@ -13,7 +13,7 @@ function Home() {
   return (
     <div className="flex flex-col gap-8 pt-8">
       {/* Info lander */}
-      <div className="mx-auto flex flex-row justify-center gap-6">
+      <div className="mx-auto flex flex-row items-center justify-center gap-8">
         {/* Info lander text */}
         <div className="flex max-w-md flex-col gap-4 text-center md:text-left">
           <div className="flex flex-col">
@@ -21,7 +21,7 @@ function Home() {
               Gavin Normand
             </p>
             <p className="text-primary-text text-lg">
-              CS @ Northeastern University
+              Honors CS @ Northeastern University
             </p>
           </div>
           <p className="text-secondary-text">
@@ -31,8 +31,9 @@ function Home() {
               href="https://www.khoury.northeastern.edu/"
             >
               Northeastern University
-            </a>
-            . Previously, I've worked as a Software Engineer Intern at{" "}
+            </a>{" "}
+            interested in building software that interacts with the real world.
+            Previously, I've worked as a Software Engineer Intern at{" "}
             <a
               className="text-accent underline hover:decoration-wavy"
               href="http://acorns.com/"
@@ -46,18 +47,8 @@ function Home() {
             >
               Smartleaf
             </a>
-            . Outside of work, I am the Technical Director at{" "}
-            <a
-              className="text-accent underline hover:decoration-wavy"
-              href="http://sandboxnu.com/"
-            >
-              Sandbox
-            </a>
-            , a Resident Assistant on campus, a Teaching Assistant, and looking
-            for new research opportunities. I'm particularly interested in
-            robotics, intelligent systems, computer vision, artificial
-            intelligence, and building software that can have an impact beyond
-            the screen.
+            . I spend my time working on projects, researching robotics and AI,
+            and looking for interesting problems to explore.
           </p>
           {/* Info lander socials */}
           <div className="text-secondary-text flex flex-row items-center justify-center gap-4 md:justify-start">
@@ -97,19 +88,19 @@ function Home() {
 
         {/* Info lander image */}
         <div
-          className="relative hidden aspect-8/10 h-96 w-64 md:block"
+          className="relative hidden aspect-8/10 h-80 md:block"
           onMouseOver={() => setPictureHovered(true)}
           onMouseOut={() => setPictureHovered(false)}
         >
           <img
             src={`/home/me_${pictureIndex}.jpg`}
-            className={`absolute inset-0 h-96 rounded-xl object-cover transition-opacity duration-200 ${
+            className={`absolute inset-0 h-80 rounded-xl object-cover transition-opacity duration-200 ${
               pictureHovered ? "opacity-0" : "opacity-100"
             }`}
           />
           <img
             src="/home/little_me.jpg"
-            className={`absolute inset-0 h-96 rounded-xl object-cover transition-opacity duration-200 ${
+            className={`absolute inset-0 h-80 rounded-xl object-cover transition-opacity duration-200 ${
               pictureHovered ? "opacity-100" : "opacity-0"
             }`}
           />
@@ -119,35 +110,32 @@ function Home() {
       {/* About me */}
       <div className="flex flex-col gap-4">
         <SectionTitle title={"about me"} />
-        <p className="text-secondary-text">
-          Hi! I'm Gavin Normand, a third-year honors Computer Science student at
+        <p className="text-secondary-text px-2">
+          I'm Gavin Normand, a third-year honors Computer Science student at
           Northeastern University, pursuing a bachelor's degree with a
-          concentration in Software and a minor in Mathematics. I'm interested
-          in building things that sit at the intersection of software,
-          intelligent systems, and the physical world. A lot of my time outside
-          the classroom is spent building.
+          concentration in Software and a minor in Mathematics.
           <br />
           <br />
-          I work on projects through Sandbox, a student-led software
-          consultancy, as well as personal projects and freelance work. I also
-          enjoy exploring research and technical problems simply because I find
-          them interesting. My interests currently span robotics, artificial
-          intelligence, machine learning, computer vision, and cloud computing,
-          and I'm always looking for opportunities to learn something new or
-          work on a problem I haven't encountered before.
+          I spend a lot of my time building software. I work on projects through
+          Sandbox, a student-led software consultancy, as well as personal
+          projects and freelance work. I'm especially interested in robotics,
+          artificial intelligence, machine learning, computer vision, and
+          intelligent systems.
           <br />
           <br />I grew up in Millstone, New Jersey, and now spend most of the
-          year in Boston. Outside of tech, I'm usually doing something outdoors
-          or spending time with people I care about. I enjoy pickup basketball,
-          hiking, biking, running, skiing, tennis, photography, and cooking. I'm
-          also always of spending time with friends, family, and my dog.
+          year in Boston. Outside of tech, I'm usually outdoors or spending time
+          with friends, family, and my dog. I enjoy pickup basketball, hiking,
+          biking, running, skiing, tennis, music, and watching the
+          NBA and NFL.
         </p>
       </div>
 
       {/* Music */}
       <div className="flex flex-col gap-4">
         <SectionTitle title={"music"} />
-        <Music />
+        <div className="px-2">
+          <Music />
+        </div>
       </div>
     </div>
   );

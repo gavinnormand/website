@@ -4,7 +4,7 @@ import { MdOutlineEmail } from "react-icons/md";
 function Footer() {
   return (
     <div className="text-secondary-text border-secondary-text/25 mx-auto flex h-12   max-w-3xl flex-row items-center justify-between gap-6 border-t px-8 text-sm">
-      © {new Date().getFullYear()} Gavin Normand
+      &copy; {new Date().getFullYear()} Gavin Normand
       <div className="text-secondary-text flex flex-row items-center justify-center gap-4 md:justify-start">
         <a
           target="_blank"
