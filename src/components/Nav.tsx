@@ -9,7 +9,8 @@ function Nav() {
           to={"/"}
           className={`hover:text-accent transition-colors ${location.pathname == "/" ? "text-accent" : ""}`}
         >
-          gavinnormand
+          g<span className="hidden md:inline">avin</span>n
+          <span className="hidden md:inline">ormand</span>
         </Link>
         <div className="flex flex-row items-center gap-6">
           <Link

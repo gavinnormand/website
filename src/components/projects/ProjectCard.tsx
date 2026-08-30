@@ -8,7 +8,7 @@ function ProjectCard({ project }: { project: ProjectType }) {
   return (
     <div className="bg-secondary-text/5 border-secondary-text/10 hover:border-secondary-text/20 text-secondary-text group flex w-full flex-col overflow-hidden rounded-xl border transition-colors md:flex-row">
       {/* Project media */}
-      <div className="aspect-video w-full shrink-0 overflow-hidden p-4 pr-0 md:w-72">
+      <div className="aspect-video w-full shrink-0 overflow-hidden p-4 md:pr-0 md:w-72">
         <img
           className={`${isImage ? "block" : "hidden"} h-full w-full rounded-md object-cover`}
           src={project.imageURL}
