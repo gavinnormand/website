@@ -14,7 +14,7 @@ function Dropdown({
   return (
     <div className="relative flex flex-col">
       <div
-        className={`border-secondary-text flex cursor-pointer flex-row items-center gap-2 border px-1 ${isOpen ? "rounded-t-md border-b-transparent" : "rounded-md"}`}
+        className={`flex cursor-pointer flex-row items-center gap-2 border px-1 transition-colors ${isOpen ? "border-secondary-text border-b-secondary-text/50 rounded-t-md" : "border-secondary-text/50 hover:border-secondary-text rounded-md"}`}
         onClick={() => setIsOpen(!isOpen)}
       >
         <p>{options[selectedOption]}</p>
@@ -23,7 +23,7 @@ function Dropdown({
         />
       </div>
       {isOpen && (
-        <div className="bg-background border-secondary-text absolute top-full z-10 -mt-px w-full rounded-b-md border border-t-0 px-1 pb-px">
+        <div className="bg-background border-secondary-text absolute top-full z-10 w-full rounded-b-md border border-t-0 px-1 pb-px">
           {Object.keys(options).map((method) => {
             return (
               <p

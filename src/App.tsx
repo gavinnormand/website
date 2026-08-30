@@ -5,11 +5,13 @@ import Experience from "./pages/Experience";
 import Projects from "./pages/Projects";
 import Card from "./pages/Card";
 import Footer from "./components/Footer";
-import { Analytics } from "@vercel/analytics/react"
+import ScrollToTop from "./components/ScrollToTop";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Nav />
       <div className="mx-auto max-w-3xl px-4 py-8 md:px-8">
         <Routes>

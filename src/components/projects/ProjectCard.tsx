@@ -6,15 +6,15 @@ function ProjectCard({ project }: { project: ProjectType }) {
   const hasLiveUrl = project.liveURL && project.liveURL.length > 0;
   const isImage = !project.imageURL.endsWith(".mp4");
   return (
-    <div className="bg-secondary-text/5 text-secondary-text flex w-full flex-col overflow-hidden rounded-xl md:flex-row">
+    <div className="bg-secondary-text/5 border-secondary-text/10 hover:border-secondary-text/20 text-secondary-text group flex w-full flex-col overflow-hidden rounded-xl border transition-colors md:flex-row">
       {/* Project media */}
-      <div className="aspect-video w-full shrink-0 overflow-hidden md:w-72">
+      <div className="aspect-video w-full shrink-0 overflow-hidden p-4 pr-0 md:w-72">
         <img
-          className={`${isImage ? "block" : "hidden"} h-full w-full object-cover`}
+          className={`${isImage ? "block" : "hidden"} h-full w-full rounded-md object-cover`}
           src={project.imageURL}
         />
         <video
-          className={`${isImage ? "hidden" : "block"} h-full w-full object-cover`}
+          className={`${isImage ? "hidden" : "block"} h-full w-full rounded-md object-cover`}
           src={project.imageURL}
           loop
           muted
@@ -25,7 +25,7 @@ function ProjectCard({ project }: { project: ProjectType }) {
       </div>
 
       {/* Project info */}
-      <div className="flex flex-1 flex-col justify-between gap-2 p-4 text-center md:text-left">
+      <div className="flex flex-1 flex-col justify-between gap-3 p-4 text-center md:text-left">
         {/* Project title and description */}
         <div className="flex flex-col">
           <p className="text-primary-text text-lg font-semibold">
@@ -35,11 +35,11 @@ function ProjectCard({ project }: { project: ProjectType }) {
         </div>
 
         {/* Tech stack */}
-        <div className="flex flex-row flex-wrap gap-1">
+        <div className="flex flex-row flex-wrap justify-center gap-1.5 md:justify-start">
           {project.stack.map((tech) => (
             <p
               key={tech}
-              className="bg-secondary-text/10 rounded px-1 py-0.5 font-mono text-xs whitespace-nowrap"
+              className="bg-secondary-text/10 text-secondary-text/90 rounded-md px-1.5 py-0.5 font-mono text-xs whitespace-nowrap"
             >
               {tech}
             </p>
@@ -47,11 +47,11 @@ function ProjectCard({ project }: { project: ProjectType }) {
         </div>
 
         {/* Project links */}
-        <div className="mt-2 flex flex-row justify-between text-sm font-medium">
+        <div className="mt-1 flex flex-row justify-center gap-2 text-sm font-medium md:justify-between">
           <a
             href={project.githubURL}
             target="_blank"
-            className="hover:text-github border-secondary-text hover:border-github flex flex-row items-center gap-1 rounded-md border px-1 font-mono text-sm transition-colors"
+            className="hover:text-github border-secondary-text/30 hover:border-github flex flex-row items-center gap-1.5 rounded-md border px-2.5 py-1 font-mono text-xs transition-colors"
           >
             <IoLogoGithub size={16} />
             <p>github</p>
@@ -60,7 +60,7 @@ function ProjectCard({ project }: { project: ProjectType }) {
             <a
               href={project.liveURL}
               target="_blank"
-              className="hover:text-accent border-secondary-text hover:border-accent flex flex-row items-center gap-1 rounded-md border px-1 font-mono text-sm transition-colors"
+              className="hover:text-accent border-secondary-text/30 hover:border-accent flex flex-row items-center gap-1.5 rounded-md border px-2.5 py-1 font-mono text-xs transition-colors"
             >
               <FiExternalLink size={16} />
               <p>visit</p>

@@ -74,14 +74,13 @@ const projects: ProjectType[] = [
     githubURL: "https://github.com/gavinnormand/clue-sidekick/",
     liveURL: "https://cluesidekick.vercel.app/",
     stack: [
-      "Vue 3",
+      "Vue",
       "TypeScript",
       "Tailwind CSS",
       "Vercel",
       "Spring Boot",
       "Docker",
       "AWS Lightsail",
-      "Vite",
     ],
   },
   {
@@ -170,7 +169,7 @@ const projects: ProjectType[] = [
     imageURL: "/projects/planur.png",
     githubURL: "https://github.com/Oasis-NEU/f24-group20",
     liveURL: "",
-    stack: ["React", "JavaScript", "HTML", "CSS", "Vite", "React Router"],
+    stack: ["React", "JavaScript", "HTML", "CSS", "React Router"],
   },
 ];
 
