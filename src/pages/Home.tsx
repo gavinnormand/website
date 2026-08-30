@@ -4,6 +4,7 @@ import { MdOutlineEmail } from "react-icons/md";
 import SectionTitle from "../components/SectionTitle";
 import PageLink from "../components/PageLink";
 import Music from "../components/home/Music";
+import Skills from "../components/home/Skills";
 
 function Home() {
   const [pictureIndex] = useState<number>(() => {
@@ -131,6 +132,14 @@ function Home() {
           with friends, family, and my dog. I enjoy pickup basketball, hiking,
           biking, running, skiing, tennis, music, and watching the NBA and NFL.
         </p>
+      </div>
+
+      {/* Skills */}
+      <div className="flex flex-col gap-4">
+        <SectionTitle title={"skills"} />
+        <div className="px-2">
+          <Skills />
+        </div>
       </div>
 
       {/* Music */}
