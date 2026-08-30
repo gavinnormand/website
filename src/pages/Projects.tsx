@@ -100,12 +100,29 @@ const projects: ProjectType[] = [
     ],
   },
   {
-    title: "Personal Portfolio",
+    title: "Personal Portfolio v2",
+    description:
+      "The site you are currently visiting! A visual refresh of my old personal portfolio with some new and fun features!",
+    imageURL: "/projects/websitev2.png",
+    githubURL: "https://github.com/gavinnormand/website",
+    liveURL: "https://gavinnormand.com/",
+    stack: [
+      "React",
+      "TypeScript",
+      "JavaScript",
+      "Tailwind CSS",
+      "Next.js",
+      "Vercel",
+      "Bun",
+    ],
+  },
+  {
+    title: "Personal Portfolio v1",
     description:
       "My original personal portfolio website that I created to showcase my projects, experiences, and skills as an engineer",
-    imageURL: "/projects/website.png",
+    imageURL: "/projects/websitev1.png",
     githubURL: "https://github.com/gavinnormand/personal-website",
-    liveURL: "https://gavinnormand.com/",
+    liveURL: "https://old.gavinnormand.com/",
     stack: [
       "React",
       "TypeScript",
