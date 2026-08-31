@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Outlet } from "react-router-dom";
 import Home from "./pages/Home";
 import Nav from "./components/Nav";
 import Experience from "./pages/Experience";
@@ -8,20 +8,30 @@ import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import { Analytics } from "@vercel/analytics/react";
 
+function SiteLayout() {
+  return (
+    <>
+      <Nav />
+      <div className="mx-auto max-w-3xl px-4 py-8 md:px-8">
+        <Outlet />
+      </div>
+      <Footer />
+    </>
+  );
+}
+
 function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <Nav />
-      <div className="mx-auto max-w-3xl px-4 py-8 md:px-8">
-        <Routes>
+      <Routes>
+        <Route element={<SiteLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/experience" element={<Experience />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/card" element={<Card />} />
-        </Routes>
-      </div>
-      <Footer />
+        </Route>
+        <Route path="/card" element={<Card />} />
+      </Routes>
       <Analytics />
     </BrowserRouter>
   );

@@ -8,8 +8,8 @@
   --color-secondary-text: #cccccc;
   --font-accent: "Space Grotesk", sans-serif;
   --font-copperplate: "Copperplate Gothic", serif;
-  --color-background-card: #F5F1E8;
-  --color-github: #8B7DB8;
+  --color-background-card: #f5f1e8;
+  --color-github: #8b7db8;
 }
 
 @font-face {
@@ -34,4 +34,16 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@media (max-width: 768px) and (orientation: portrait) {
+  .card-wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100vh;
+    height: 100vw;
+    transform: translate(-50%, -50%) rotate(90deg);
+    transform-origin: center;
+  }
 }
