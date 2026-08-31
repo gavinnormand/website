@@ -47,3 +47,20 @@
     transform-origin: center;
   }
 }
+
+.card-wrapper {
+  height: 100svh;
+  width: 100vw;
+}
+
+@media (max-width: 768px) and (orientation: portrait) {
+  .card-wrapper {
+    width: 100svh;
+    height: 100svw;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+    transform-origin: center;
+  }
+}
