@@ -5,7 +5,7 @@ function Card() {
         <filter id="paperNoise">
           <feTurbulence
             type="fractalNoise"
-            baseFrequency="0.04"
+            baseFrequency="0.1"
             numOctaves="5"
             seed="7"
             stitchTiles="stitch"
