@@ -1,4 +1,4 @@
-import type { SongType } from "../../types/SongType";
+import type { SongType } from "../../../types/SongType";
 
 function dateTimeToTimeSince(dateTime: string) {
   const date = new Date(dateTime);

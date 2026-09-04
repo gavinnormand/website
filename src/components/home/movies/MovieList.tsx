@@ -1,12 +1,12 @@
-import type { SongType } from "../../types/SongType";
-import Song from "./Song";
+import type { MovieType } from "../../../types/MovieType";
+import Movie from "./Movie";
 
-function SongList({ songs }: { songs: SongType[] }) {
+function MovieList({ movies }: { movies: MovieType[] }) {
   return (
     <div className="flex flex-col gap-3">
-      {songs.map((song, index, array) => (
+      {movies.map((movie, index, array) => (
         <div className="flex flex-col gap-3">
-          <Song song={song} />
+          <Movie movie={movie} />
           {index != array.length - 1 && (
             <div className="bg-secondary-text/25 h-px" />
           )}
@@ -16,4 +16,4 @@ function SongList({ songs }: { songs: SongType[] }) {
   );
 }
 
-export default SongList;
+export default MovieList;

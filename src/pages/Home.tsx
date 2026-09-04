@@ -3,8 +3,9 @@ import { IoLogoGithub, IoLogoInstagram, IoLogoLinkedin } from "react-icons/io";
 import { MdOutlineEmail } from "react-icons/md";
 import SectionTitle from "../components/SectionTitle";
 import PageLink from "../components/PageLink";
-import Music from "../components/home/Music";
-import Skills from "../components/home/Skills";
+import Music from "../components/home/music/Music";
+import Skills from "../components/home/skills/Skills";
+import Movies from "../components/home/movies/Movies";
 
 function Home() {
   const [pictureIndex] = useState<number>(() => {
@@ -147,6 +148,14 @@ function Home() {
         <SectionTitle title={"music"} />
         <div className="px-2">
           <Music />
+        </div>
+      </div>
+
+      {/* Movies */}
+      <div className="flex flex-col gap-4">
+        <SectionTitle title={"movies"} />
+        <div className="px-2">
+          <Movies />
         </div>
       </div>
     </div>

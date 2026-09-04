@@ -1,8 +1,8 @@
 import { useEffect, useState, type SetStateAction } from "react";
-import type { SongType } from "../../types/SongType";
-import Dropdown from "./Dropdown";
-import SongList from "./SongList";
+import type { SongType } from "../../../types/SongType";
+import Dropdown from "../Dropdown";
 import { SpinnerCircularFixed } from "spinners-react";
+import SongList from "./SongList";
 
 const fetchSongs = async (method: string, range: string) => {
   try {

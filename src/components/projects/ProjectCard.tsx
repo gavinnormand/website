@@ -8,7 +8,7 @@ function ProjectCard({ project }: { project: ProjectType }) {
   return (
     <div className="bg-secondary-text/5 border-secondary-text/10 hover:border-secondary-text/20 text-secondary-text group flex w-full flex-col overflow-hidden rounded-xl border transition-colors md:flex-row">
       {/* Project media */}
-      <div className="aspect-video w-full shrink-0 overflow-hidden p-4 md:pr-0 md:w-72">
+      <div className="aspect-video w-full shrink-0 overflow-hidden p-4 md:w-72 md:pr-0">
         <img
           className={`${isImage ? "block" : "hidden"} h-full w-full rounded-md object-cover`}
           src={project.imageURL}
@@ -51,7 +51,7 @@ function ProjectCard({ project }: { project: ProjectType }) {
           <a
             href={project.githubURL}
             target="_blank"
-            className="hover:text-github border-secondary-text/30 hover:border-github flex flex-row items-center gap-1.5 rounded-md border px-2.5 py-1 font-mono text-xs transition-colors"
+            className="text-secondary-text border-github hover:bg-github flex flex-row items-center gap-1.5 rounded-md border px-2.5 py-1 font-mono text-xs transition-colors hover:text-primary-text"
           >
             <IoLogoGithub size={16} />
             <p>github</p>
@@ -60,7 +60,7 @@ function ProjectCard({ project }: { project: ProjectType }) {
             <a
               href={project.liveURL}
               target="_blank"
-              className="hover:text-accent border-secondary-text/30 hover:border-accent flex flex-row items-center gap-1.5 rounded-md border px-2.5 py-1 font-mono text-xs transition-colors"
+              className="text-secondary-text hover:bg-accent border-accent flex flex-row items-center gap-1.5 rounded-md border px-2.5 py-1 font-mono text-xs transition-colors hover:text-primary-text"
             >
               <FiExternalLink size={16} />
               <p>visit</p>
