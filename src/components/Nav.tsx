@@ -16,6 +16,12 @@ function Nav() {
         </Link>
         <div className="flex flex-row items-center gap-6">
           <Link
+            to={"/about"}
+            className={`hover:text-accent transition-colors ${location.pathname == "/about" ? "text-accent" : ""}`}
+          >
+            about
+          </Link>
+          <Link
             to={"/experience"}
             className={`hover:text-accent transition-colors ${location.pathname == "/experience" ? "text-accent" : ""}`}
           >
