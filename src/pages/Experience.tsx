@@ -28,8 +28,21 @@ const experiences: ExperienceType[] = [
     },
   },
   {
+    title: "Robotics Research Assistant",
+    company: "RIVeR Lab, Northeastern University",
+    startDate: "Aug. 2026",
+    endDate: undefined,
+    location: "Boston, MA",
+    description:
+      "Enabling autonomous wheelchair navigation via a novel brain-computer interface",
+    logo: {
+      src: "/experience/river.png",
+      link: "https://robot.neu.edu/",
+    },
+  },
+  {
     title: "Teaching Assistant",
-    company: "Northeastern University",
+    company: "Khoury College, Northeastern University",
     startDate: "Aug. 2025",
     endDate: undefined,
     location: "Boston, MA",
@@ -42,7 +55,7 @@ const experiences: ExperienceType[] = [
   },
   {
     title: "Resident Assistant",
-    company: "Northeastern University",
+    company: "Residential Life, Northeastern University",
     startDate: "Aug. 2025",
     endDate: undefined,
     location: "Boston, MA",
