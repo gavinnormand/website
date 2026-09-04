@@ -7,6 +7,7 @@ import Card from "./pages/Card";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import { Analytics } from "@vercel/analytics/react";
+import About from "./pages/About";
 
 function SiteLayout() {
   return (
@@ -27,6 +28,7 @@ function App() {
       <Routes>
         <Route element={<SiteLayout />}>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
           <Route path="/experience" element={<Experience />} />
           <Route path="/projects" element={<Projects />} />
         </Route>
