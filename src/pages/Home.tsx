@@ -6,6 +6,7 @@ import PageLink from "../components/PageLink";
 import Music from "../components/home/music/Music";
 import Skills from "../components/home/skills/Skills";
 import Movies from "../components/home/movies/Movies";
+import Chess from "../components/home/chess/Chess";
 
 function Home() {
   const [pictureIndex] = useState<number>(() => {
@@ -156,6 +157,14 @@ function Home() {
         <SectionTitle title={"movies"} />
         <div className="px-2">
           <Movies />
+        </div>
+      </div>
+
+      {/* Chess */}
+      <div className="flex flex-col gap-4">
+        <SectionTitle title={"chess"} />
+        <div className="px-2">
+          <Chess />
         </div>
       </div>
     </div>

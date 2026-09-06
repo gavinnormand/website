@@ -4,10 +4,10 @@ import Song from "./Song";
 function SongList({ songs }: { songs: SongType[] }) {
   return (
     <div className="flex flex-col gap-3">
-      {songs.map((song, index, array) => (
+      {songs.map((song, index) => (
         <div className="flex flex-col gap-3">
           <Song song={song} />
-          {index != array.length - 1 && (
+          {index != songs.length - 1 && (
             <div className="bg-secondary-text/25 h-px" />
           )}
         </div>
