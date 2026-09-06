@@ -7,12 +7,6 @@ function Home() {
     <div className="flex h-[calc(100vh-177px)] flex-col items-center justify-center">
       {/* Info lander */}
       <div className="mx-auto flex flex-col items-center justify-center gap-8 md:flex-row">
-        {/* Info lander image on mobile */}
-        <img
-          src={`/home/me_6.jpg`}
-          className="aspect-5/3 h-36 rounded-xl object-cover md:hidden"
-        />
-
         {/* Info lander text */}
         <div className="flex max-w-md flex-col gap-4 text-center md:text-left">
           <div className="flex flex-col">
