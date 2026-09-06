@@ -1,25 +1,29 @@
-import { useState } from "react";
 import { IoLogoGithub, IoLogoInstagram, IoLogoLinkedin } from "react-icons/io";
 import { MdOutlineEmail } from "react-icons/md";
 import PageLink from "../components/PageLink";
 
 function Home() {
-  const [pictureHovered, setPictureHovered] = useState<boolean>(false);
   return (
     <div className="flex h-[calc(100vh-177px)] flex-col items-center justify-center">
       {/* Info lander */}
-      <div className="mx-auto flex flex-row items-center justify-center gap-8">
+      <div className="mx-auto flex flex-col items-center justify-center gap-8 md:flex-row">
+        {/* Info lander image on mobile */}
+        <img
+          src={`/home/me_6.jpg`}
+          className="aspect-5/3 h-36 rounded-xl object-cover md:hidden"
+        />
+
         {/* Info lander text */}
         <div className="flex max-w-md flex-col gap-4 text-center md:text-left">
           <div className="flex flex-col">
-            <p className="text-accent font-accent text-5xl font-bold">
+            <p className="text-accent font-accent text-6xl font-bold">
               Gavin Normand
             </p>
-            <p className="text-primary-text text-lg">
+            <p className="text-primary-text text-xl">
               Honors CS @ Northeastern University
             </p>
           </div>
-          <p className="text-secondary-text">
+          <p className="text-secondary-text text-lg">
             I'm a Computer Science student at{" "}
             <a
               className="text-accent underline hover:decoration-wavy"
@@ -42,16 +46,11 @@ function Home() {
             >
               Smartleaf
             </a>
-            . I spend my time working on projects, researching robotics and AI,
-            and looking for interesting problems to explore.
+            . <br />I spend my time building projects, researching robotics and
+            AI, and looking for interesting problems to explore.
           </p>
           {/* Info lander socials */}
-          <div className="text-secondary-text flex flex-col items-center justify-center gap-4 md:items-start md:justify-start">
-            <div className="flex flex-row gap-4">
-              <PageLink page={"about"} link={"/about"} size={24} />
-              <PageLink page={"experience"} link={"/experience"} size={24} />
-              <PageLink page={"projects"} link={"/projects"} size={24} />
-            </div>
+          <div className="text-secondary-text flex flex-col items-center justify-center gap-4 md:flex-row md:justify-start">
             <div className="flex flex-row gap-4">
               <a
                 target="_blank"
@@ -82,28 +81,21 @@ function Home() {
                 <IoLogoInstagram size={28} />
               </a>
             </div>
+            <p className="hidden md:block">|</p>
+            <div className="flex flex-row gap-4">
+              <PageLink page={"about"} link={"/about"} size={24} />
+              <PageLink page={"experience"} link={"/experience"} size={24} />
+              <PageLink page={"projects"} link={"/projects"} size={24} />
+            </div>
           </div>
         </div>
 
-        {/* Info lander image */}
-        <div
-          className="relative hidden aspect-8/10 h-80 md:block"
-          onMouseOver={() => setPictureHovered(true)}
-          onMouseOut={() => setPictureHovered(false)}
-        >
-          <img
-            src={`/home/me_1.jpg`}
-            className={`absolute inset-0 h-80 rounded-xl object-cover transition-opacity duration-200 ${
-              pictureHovered ? "opacity-0" : "opacity-100"
-            }`}
-          />
-          <img
-            src="/home/little_me.jpg"
-            className={`absolute inset-0 h-80 rounded-xl object-cover transition-opacity duration-200 ${
-              pictureHovered ? "opacity-100" : "opacity-0"
-            }`}
-          />
-        </div>
+        {/* Info lander image on desktop */}
+
+        <img
+          src={`/home/me_8.jpg`}
+          className="hidden aspect-3/5 h-96 rounded-xl object-cover md:block"
+        />
       </div>
     </div>
   );

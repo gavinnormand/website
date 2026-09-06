@@ -4,7 +4,7 @@ function Nav() {
   const location = useLocation();
   return (
     <div className="border-accent/15 bg-background sticky top-0 z-50 border-b">
-      <div className="text-secondary-text mx-auto flex h-16 max-w-3xl flex-row items-center justify-between gap-6 px-8">
+      <div className="text-secondary-text mx-auto flex h-16 max-w-3xl flex-row items-center justify-between gap-3 md:gap-6 px-8">
         <Link
           to={"/"}
           className={`hover:text-accent transition-colors ${location.pathname == "/" ? "text-accent" : ""}`}
@@ -14,7 +14,7 @@ function Nav() {
           </p>
           <p className="font-accent text-lg font-bold md:hidden">gn</p>
         </Link>
-        <div className="flex flex-row items-center gap-6">
+        <div className="flex flex-row items-center gap-3 md:gap-6">
           <Link
             to={"/about"}
             className={`hover:text-accent transition-colors ${location.pathname == "/about" ? "text-accent" : ""}`}
