@@ -4,7 +4,7 @@ import PageLink from "../components/PageLink";
 
 function Home() {
   return (
-    <div className="flex h-[calc(100vh-177px)] flex-col items-center justify-center">
+    <div className="flex h-[calc(100svh-177px)] flex-col items-center justify-center">
       {/* Info lander */}
       <div className="mx-auto flex flex-col items-center justify-center gap-8 md:flex-row">
         {/* Info lander text */}
