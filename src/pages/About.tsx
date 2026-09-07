@@ -1,9 +1,10 @@
 import SectionTitle from "../components/SectionTitle";
-import Music from "../components/home/music/Music";
-import Skills from "../components/home/skills/Skills";
-import Movies from "../components/home/movies/Movies";
-import Chess from "../components/home/chess/Chess";
+import Music from "../components/about/music/Music";
+import Skills from "../components/about/skills/Skills";
+import Movies from "../components/about/movies/Movies";
+import Chess from "../components/about/chess/Chess";
 import { useState } from "react";
+import Pictures from "../components/about/Pictures";
 
 function About() {
   const [pictureHovered, setPictureHovered] = useState<boolean>(false);
@@ -58,6 +59,14 @@ function About() {
         <SectionTitle title={"skills"} />
         <div className="px-2">
           <Skills />
+        </div>
+      </div>
+
+      {/* Pictures */}
+      <div className="flex flex-col gap-4">
+        <SectionTitle title={"pictures"} />
+        <div className="px-2">
+          <Pictures />
         </div>
       </div>
 

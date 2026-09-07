@@ -24,6 +24,11 @@ export default async function handler(req, res) {
         rating: data.chess_rapid.last.rating,
         lastPlayed: data.chess_rapid.last.date,
       },
+      {
+        mode: "daily",
+        rating: data.chess_daily.last.rating,
+        lastPlayed: data.chess_daily.last.date,
+      },
     ];
 
     return res.status(200).json(stats);

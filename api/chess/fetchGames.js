@@ -46,8 +46,20 @@ export default async function handler(req, res) {
           : "black";
       return {
         mode: game.time_class,
-        ratingBefore: games[index + 1][last_side].rating,
-        ratingAfter: game[side].rating,
+        rating: game[side].rating,
+        opening: game.eco
+          .split("/")
+          .pop()
+          .replace(/-\d+(\..*)?$/, "")
+          .replace(/-/g, " "),
+        openingLink: game.eco,
+        gameLink: game.url,
+        numMoves: parseInt(
+          [
+            ...game.pgn.replace(/\{[^}]*\}/g, "").matchAll(/ (\d+)\. /g),
+          ].pop()[1],
+          10,
+        ),
         datePlayed: game.end_time,
         result:
           game[side].result == "win"

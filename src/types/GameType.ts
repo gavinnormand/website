@@ -1,7 +1,10 @@
 export interface GameType {
   mode: string;
-  ratingBefore: number;
-  ratingAfter: number;
+  rating: number;
+  opening: string;
+  openingLink: string;
+  gameLink: string;
+  numMoves: number;
   datePlayed: number;
   result: "win" | "loss" | "stalemate";
 }
