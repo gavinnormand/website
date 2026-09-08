@@ -1,5 +1,3 @@
-import { IoLogoGithub, IoLogoInstagram, IoLogoLinkedin } from "react-icons/io";
-import { MdOutlineEmail } from "react-icons/md";
 import PageLink from "../components/PageLink";
 
 function Home() {
@@ -44,43 +42,26 @@ function Home() {
             AI, and looking for interesting problems to explore.
           </p>
           {/* Info lander socials */}
-          <div className="text-secondary-text flex flex-col items-center justify-center gap-4 md:flex-row md:justify-start">
-            <div className="flex flex-row gap-4">
-              <a
-                target="_blank"
-                href="mailto:normandgavin@gmail.com"
-                className="hover:text-primary-text transition-colors"
-              >
-                <MdOutlineEmail size={28} />
-              </a>
-              <a
-                target="_blank"
-                href="https://github.com/gavinnormand"
-                className="hover:text-primary-text transition-colors"
-              >
-                <IoLogoGithub size={28} />
-              </a>
-              <a
-                target="_blank"
-                href="https://linkedin.com/in/gavin-normand"
-                className="hover:text-primary-text transition-colors"
-              >
-                <IoLogoLinkedin size={28} />
-              </a>
-              <a
-                target="_blank"
-                href="https://instagram.com/gavin_normand"
-                className="hover:text-primary-text transition-colors"
-              >
-                <IoLogoInstagram size={28} />
-              </a>
-            </div>
-            <p className="hidden md:block">|</p>
-            <div className="flex flex-row gap-4">
-              <PageLink page={"about"} link={"/about"} size={24} />
-              <PageLink page={"experience"} link={"/experience"} size={24} />
-              <PageLink page={"projects"} link={"/projects"} size={24} />
-            </div>
+          <div className="flex flex-row justify-center gap-4 md:justify-start">
+            <PageLink page={"about"} link={"/about"} size={24} type={"page"} />
+            <PageLink
+              page={"experience"}
+              link={"/experience"}
+              size={24}
+              type={"page"}
+            />
+            <PageLink
+              page={"projects"}
+              link={"/projects"}
+              size={24}
+              type={"page"}
+            />
+            <PageLink
+              page={"resume"}
+              link={"https://www.gavinnormand.com/resume.pdf"}
+              size={24}
+              type={"external"}
+            />
           </div>
         </div>
 
