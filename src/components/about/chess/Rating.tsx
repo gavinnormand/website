@@ -23,7 +23,7 @@ function epochToTimeSince(epoch: number) {
 function Rating({ rating }: { rating: RatingType }) {
   return (
     <div className="flex flex-row items-center gap-3 text-center md:flex-col">
-      <img src={"/about/" + rating.mode + ".svg"} className="h-10" />
+      <img src={"/about/chess/" + rating.mode + ".svg"} className="h-10" />
       <div className="flex flex-col">
         <p>
           <span className="font-semibold">mode:</span> {rating.mode}

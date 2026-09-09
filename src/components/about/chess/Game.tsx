@@ -25,7 +25,7 @@ function Game({ game }: { game: GameType }) {
   return (
     <div className="flex flex-row items-center justify-between">
       <div className="flex flex-row items-center gap-4">
-        <img src={"/about/" + game.mode + ".svg"} className="h-8" />
+        <img src={"/about/chess/" + game.mode + ".svg"} className="h-8" />
         <div className="flex flex-col">
           <div className="flex flex-row items-center gap-1">
             <p>{game.mode} mode</p>

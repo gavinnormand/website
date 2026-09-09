@@ -14,12 +14,12 @@
     "@vercel/analytics": "^2.0.1",
     "cloudinary": "^2.11.0",
     "fast-xml-parser": "^5.11.1",
+    "keen-slider": "^6.8.6",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "react-icons": "^5.7.0",
     "react-router-dom": "^7.18.2",
     "spinners-react": "^1.0.11",
-    "swiper": "^14.2.0",
     "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
